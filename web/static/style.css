@@ -225,6 +225,16 @@ kbd { background: var(--raised); border: 1px solid var(--border-2); border-botto
   }
 }
 
+/* Imported missing base UI styles from cp-offline-full-v2 */
+.list-row { display: flex; align-items: center; gap: 10px; padding: 10px 2px; border-bottom: 1px solid var(--border); color: var(--text); }
+.list-row:last-child { border-bottom: 0; } .list-row:hover { text-decoration: none; color: var(--accent-2); }
+.list-row .grow { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.empty, .loading, .errbox { padding: 34px 16px; text-align: center; color: var(--faint); }
+.errbox { color: var(--red); }
+.skeleton { background: linear-gradient(90deg, var(--surface-2), var(--raised), var(--surface-2)); background-size: 200% 100%; animation: sk 1.2s infinite; border-radius: 6px; height: 14px; }
+@keyframes sk { to { background-position: -200% 0; } }
+.pager { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; color: var(--muted); font-size: 13px; }
+
 /* filters */
 .filters { display: grid; grid-template-columns: minmax(200px,2fr) repeat(4, minmax(110px,1fr)); gap: 10px; align-items: end; }
 .filters .wide2 { grid-column: span 2; }
