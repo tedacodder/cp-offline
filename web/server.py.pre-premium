@@ -17,7 +17,6 @@ from db import DB_PATH, PROJECT_ROOT, clean_tags, get_db, utcnow
 
 sys.path.insert(0, str(PROJECT_ROOT / "runner"))
 import engine  # noqa: E402
-import features  # noqa: E402  # premium-pack
 
 ROOT = Path(__file__).resolve().parent
 HOST, PORT = "127.0.0.1", 8000
@@ -520,9 +519,6 @@ class Handler(SimpleHTTPRequestHandler):
 
     def route_get(self, conn, path, params):
         seg = [urllib.parse.unquote(s) for s in path[len("/api/"):].split("/") if s]
-        _fx = features.get(conn, seg, params, sys.modules[__name__])  # premium-pack
-        if _fx is not None:  # premium-pack
-            return _fx  # premium-pack
         if seg == ["stats"]:
             return q_stats(conn)
         if seg == ["problems"]:
@@ -580,9 +576,6 @@ class Handler(SimpleHTTPRequestHandler):
     def route_post(self, conn, path):
         seg = [urllib.parse.unquote(s) for s in path[len("/api/"):].split("/") if s]
         data = self.read_json()
-        _fx = features.post(conn, seg, data, sys.modules[__name__])  # premium-pack
-        if _fx is not None:  # premium-pack
-            return _fx  # premium-pack
         if seg == ["progress"]:
             return set_status(conn, check_id(data.get("problem_id")), data.get("status"))
         if seg == ["run"]:
