@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problems · CP Offline</title><script src="/static/theme.js"></script><link rel="stylesheet" href="/static/style.css"></head>
+<body data-page="problems"><div id="nav"></div>
+<main class="wrap">
+  <div class="page-head"><div><h1>Problems</h1><p id="subtitle">Search your offline collection.</p></div></div>
+  <section class="card mb">
+    <div class="filters">
+      <label class="f"><span>Search</span><input id="search" data-search type="search" placeholder="Title, ID, tag, rating…  ( / )" autocomplete="off"></label>
+      <label class="f"><span>Platform</span><select id="platform"><option value="">All</option><option value="codeforces">Codeforces</option><option value="leetcode">LeetCode</option></select></label>
+      <label class="f"><span>Difficulty</span><select id="tier"><option value="">Any</option><option>Easy</option><option>Medium</option><option>Hard</option></select></label>
+      <label class="f"><span>Status</span><select id="status"><option value="">Any</option><option value="not_started">Not started</option><option value="unsolved">Unsolved (not started + attempted)</option>
+        <option value="attempted">Attempted</option><option value="review">Review</option><option value="solved">Solved</option></select></label>
+      <label class="f"><span>Sort</span><select id="sort"><option value="id">ID</option><option value="rating_asc">Rating ↑</option><option value="rating_desc">Rating ↓</option><option value="title">Title</option><option value="recent">Recently attempted</option></select></label>
+      <label class="f"><span>Min rating</span><input id="min_rating" type="number" step="100" min="0" max="4000" placeholder="800"></label>
+      <label class="f"><span>Max rating</span><input id="max_rating" type="number" step="100" min="0" max="4000" placeholder="3500"></label>
+      <div class="wide2 row" style="justify-content:flex-end"><button class="btn" id="reset">Reset filters</button></div>
+    </div>
+    <div class="chips" id="chips"></div>
+    <p class="faint" style="font-size:12px;margin:10px 0 0">Codeforces has no Easy/Medium/Hard: it is derived from rating (≤1200 Easy, ≤1900 Medium, above Hard). Rating filters apply to Codeforces only.</p>
+  </section>
+  <section class="card" style="padding:0;overflow:hidden">
+    <div class="pager" id="top-info"><span id="count">Loading…</span></div>
+    <div id="list" class="ptable"></div>
+    <div class="pager"><button class="btn sm" id="prev">← Previous</button><span id="page-info"></span><button class="btn sm" id="next">Next →</button></div>
+  </section>
+</main>
+<script src="/static/common.js"></script><script src="/static/problems.js"></script>
+</body></html>

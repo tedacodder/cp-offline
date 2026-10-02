@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs / temporary files
+*.log
+*.tmp
+*.temp
+*.pid
+
+# Test / cache output
+.pytest_cache/
+.coverage
+coverage/
+test-results/
+
+# Local database backups
+*.backup
+*.bak
+*.pre-change
+
+# Large cloned source repositories
+data/leetcode-source/
+data/codeforces-source/
+
+# Local CSS backups
+*.practice-backup
