@@ -1,3 +1,9 @@
+## NOTE 
+```
+This requires Linux to run for now and has a lot of Linux specific dependencies. Install Linux in your system if you do not already have it. 
+```
+
+
 # CP Offline
 
 **CP Offline** is a lightweight, offline-first competitive programming training platform for **Codeforces and LeetCode**.
